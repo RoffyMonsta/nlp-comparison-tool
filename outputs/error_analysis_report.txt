@@ -1,0 +1,339 @@
+======================================================================
+ERROR ANALYSIS REPORT
+Comparative Analysis of Classification Errors (Section 4.5)
+======================================================================
+
+
+======================================================================
+MODEL: 1_vader_generic
+======================================================================
+
+--- Class-wise Error Statistics (eq. 28-30) ---
+
+  Class 'negative':
+    True Positives (TP):  3
+    False Positives (FP): 3
+    False Negatives (FN): 416
+    Precision: 0.5000
+    Recall:    0.0072
+
+  Class 'neutral':
+    True Positives (TP):  100
+    False Positives (FP): 1688
+    False Negatives (FN): 0
+    Precision: 0.0559
+    Recall:    1.0000
+
+  Class 'positive':
+    True Positives (TP):  28
+    False Positives (FP): 11
+    False Negatives (FN): 1286
+    Precision: 0.7179
+    Recall:    0.0213
+
+--- Misclassification Patterns ---
+  negative -> neutral: 405 samples (96.7% of negative)
+  negative -> positive: 11 samples (2.6% of negative)
+  positive -> negative: 3 samples (0.2% of positive)
+  positive -> neutral: 1283 samples (97.6% of positive)
+
+  Most challenging class: 'positive' (1286 errors)
+
+--- Sample Misclassified Texts ---
+
+  Errors for 'negative':
+    - "5 обіцянок які ви повинні собі дати"
+      True: negative | Predicted: neutral
+    - "@vadim_style @SergioS_2015 @peacein4rm @KarpenkoBatjar А ти бояру з дитинства гл..."
+      True: negative | Predicted: neutral
+    - "@nothingtodowth Ну вот да додаткові витрати на їжу й психологічна нестабільність..."
+      True: negative | Predicted: neutral
+
+  Errors for 'positive':
+    - "Просто заберіть мене звідси. Закутайте у ковдрочку. Обійміть. І пообіцяйте. Що в..."
+      True: positive | Predicted: neutral
+    - "@Cheschka Було б добре але цього разу не цитата уви"
+      True: positive | Predicted: neutral
+    - "@n_biletska Ну сніг розтанув і то добре))"
+      True: positive | Predicted: neutral
+
+======================================================================
+MODEL: 2a_custom_ua_rulebased
+======================================================================
+
+--- Class-wise Error Statistics (eq. 28-30) ---
+
+  Class 'negative':
+    True Positives (TP):  305
+    False Positives (FP): 176
+    False Negatives (FN): 114
+    Precision: 0.6341
+    Recall:    0.7279
+
+  Class 'neutral':
+    True Positives (TP):  100
+    False Positives (FP): 37
+    False Negatives (FN): 0
+    Precision: 0.7299
+    Recall:    1.0000
+
+  Class 'positive':
+    True Positives (TP):  1119
+    False Positives (FP): 96
+    False Negatives (FN): 195
+    Precision: 0.9210
+    Recall:    0.8516
+
+--- Misclassification Patterns ---
+  negative -> neutral: 18 samples (4.3% of negative)
+  negative -> positive: 96 samples (22.9% of negative)
+  positive -> negative: 176 samples (13.4% of positive)
+  positive -> neutral: 19 samples (1.4% of positive)
+
+  Most challenging class: 'positive' (195 errors)
+
+--- Sample Misclassified Texts ---
+
+  Errors for 'negative':
+    - "5 обіцянок які ви повинні собі дати"
+      True: negative | Predicted: neutral
+    - "@WowihaY Ага...твітор пити не дозволяє 😅 Але щось він з запізненням....я вже і с..."
+      True: negative | Predicted: positive
+    - "По-друге він після урок спитав чи мені зрозуміло я сказала знову що мозок погано..."
+      True: negative | Predicted: positive
+
+  Errors for 'positive':
+    - "Просто заберіть мене звідси. Закутайте у ковдрочку. Обійміть. І пообіцяйте. Що в..."
+      True: positive | Predicted: negative
+    - "@leopolis31 добре можливо це баг найближчим часом виправимо. З веб версії все в ..."
+      True: positive | Predicted: negative
+    - "Добре що телеканали кличуть відповідних експертів і прокоментувати комп'ютерний ..."
+      True: positive | Predicted: negative
+
+======================================================================
+MODEL: 2b_custom_ua_hybrid
+======================================================================
+
+--- Class-wise Error Statistics (eq. 28-30) ---
+
+  Class 'negative':
+    True Positives (TP):  411
+    False Positives (FP): 40
+    False Negatives (FN): 8
+    Precision: 0.9113
+    Recall:    0.9809
+
+  Class 'neutral':
+    True Positives (TP):  100
+    False Positives (FP): 6
+    False Negatives (FN): 0
+    Precision: 0.9434
+    Recall:    1.0000
+
+  Class 'positive':
+    True Positives (TP):  1270
+    False Positives (FP): 6
+    False Negatives (FN): 44
+    Precision: 0.9953
+    Recall:    0.9665
+
+--- Misclassification Patterns ---
+  negative -> neutral: 2 samples (0.5% of negative)
+  negative -> positive: 6 samples (1.4% of negative)
+  positive -> negative: 40 samples (3.0% of positive)
+  positive -> neutral: 4 samples (0.3% of positive)
+
+  Most challenging class: 'positive' (44 errors)
+
+--- Sample Misclassified Texts ---
+
+  Errors for 'negative':
+    - "5 обіцянок які ви повинні собі дати"
+      True: negative | Predicted: neutral
+    - "Чудова ідея яку придумали італійці."
+      True: negative | Predicted: neutral
+    - "Як сказати працівнику що він смердить? І не збираюся я називати це якимось іншим..."
+      True: negative | Predicted: positive
+
+  Errors for 'positive':
+    - "Ізюм. Площа Леннона. Добре! Погано що не вийшло ще в Харкові. Але я уявляю що бу..."
+      True: positive | Predicted: negative
+    - "@yadrobotun Мабуть чоловіче і жіноче відділення в СІЗО не сполучаються. Але це я..."
+      True: positive | Predicted: negative
+    - "Мені наприклад начхати на скільки мільярдів "Укроборонпром" продав "Булатів" та ..."
+      True: positive | Predicted: negative
+
+======================================================================
+MODEL: 3_tfidf_logreg
+======================================================================
+
+--- Class-wise Error Statistics (eq. 28-30) ---
+
+  Class 'negative':
+    True Positives (TP):  414
+    False Positives (FP): 31
+    False Negatives (FN): 5
+    Precision: 0.9303
+    Recall:    0.9881
+
+  Class 'neutral':
+    True Positives (TP):  100
+    False Positives (FP): 0
+    False Negatives (FN): 0
+    Precision: 1.0000
+    Recall:    1.0000
+
+  Class 'positive':
+    True Positives (TP):  1283
+    False Positives (FP): 5
+    False Negatives (FN): 31
+    Precision: 0.9961
+    Recall:    0.9764
+
+--- Misclassification Patterns ---
+  negative -> positive: 5 samples (1.2% of negative)
+  positive -> negative: 31 samples (2.4% of positive)
+
+  Most challenging class: 'positive' (31 errors)
+
+--- Sample Misclassified Texts ---
+
+  Errors for 'negative':
+    - "З Адміністрації Президента Петро Порошенко надійшла команда генпрокурору Юрій Лу..."
+      True: negative | Predicted: positive
+    - "Нам щастило із таксистами волонтерами і краєвидами； дві болгарки назвали нас див..."
+      True: negative | Predicted: positive
+    - "@Magellan_Fernan @Gal_linochka @putina_v_Gaagu @LyapunovS Це добре,але можуть і ..."
+      True: negative | Predicted: positive
+
+  Errors for 'positive':
+    - "Ізюм. Площа Леннона. Добре! Погано що не вийшло ще в Харкові. Але я уявляю що бу..."
+      True: positive | Predicted: negative
+    - "@yadrobotun Мабуть чоловіче і жіноче відділення в СІЗО не сполучаються. Але це я..."
+      True: positive | Predicted: negative
+    - "Организовао је акцију за моју пријатељицу Милану Гајић и средства никада нису до..."
+      True: positive | Predicted: negative
+
+======================================================================
+MODEL: 4_xlm-roberta-base
+======================================================================
+
+--- Class-wise Error Statistics (eq. 28-30) ---
+
+  Class 'negative':
+    True Positives (TP):  416
+    False Positives (FP): 41
+    False Negatives (FN): 3
+    Precision: 0.9103
+    Recall:    0.9928
+
+  Class 'neutral':
+    True Positives (TP):  100
+    False Positives (FP): 1
+    False Negatives (FN): 0
+    Precision: 0.9901
+    Recall:    1.0000
+
+  Class 'positive':
+    True Positives (TP):  1272
+    False Positives (FP): 3
+    False Negatives (FN): 42
+    Precision: 0.9976
+    Recall:    0.9680
+
+--- Misclassification Patterns ---
+  negative -> positive: 3 samples (0.7% of negative)
+  positive -> negative: 41 samples (3.1% of positive)
+  positive -> neutral: 1 samples (0.1% of positive)
+
+  Most challenging class: 'positive' (42 errors)
+
+--- Sample Misclassified Texts ---
+
+  Errors for 'negative':
+    - "мені не погано і не добре мені якось ніяк"
+      True: negative | Predicted: positive
+    - "Духовний стан людини краще виявляється не тоді коли їй погано а тоді коли їй доб..."
+      True: negative | Predicted: positive
+    - "Завжди радію коли отримую увагу злочинної влади! Шкода що срач тут особливий не ..."
+      True: negative | Predicted: positive
+
+  Errors for 'positive':
+    - "Ізюм. Площа Леннона. Добре! Погано що не вийшло ще в Харкові. Але я уявляю що бу..."
+      True: positive | Predicted: negative
+    - "Петро Порошенко вам подобається таке ставлення до діабетиків? __ Петро Порошенко..."
+      True: positive | Predicted: negative
+    - "@yadrobotun Мабуть чоловіче і жіноче відділення в СІЗО не сполучаються. Але це я..."
+      True: positive | Predicted: negative
+
+======================================================================
+MODEL: 5_bert-base-multilingual-cased
+======================================================================
+
+--- Class-wise Error Statistics (eq. 28-30) ---
+
+  Class 'negative':
+    True Positives (TP):  415
+    False Positives (FP): 57
+    False Negatives (FN): 4
+    Precision: 0.8792
+    Recall:    0.9905
+
+  Class 'neutral':
+    True Positives (TP):  100
+    False Positives (FP): 1
+    False Negatives (FN): 0
+    Precision: 0.9901
+    Recall:    1.0000
+
+  Class 'positive':
+    True Positives (TP):  1257
+    False Positives (FP): 3
+    False Negatives (FN): 57
+    Precision: 0.9976
+    Recall:    0.9566
+
+--- Misclassification Patterns ---
+  negative -> neutral: 1 samples (0.2% of negative)
+  negative -> positive: 3 samples (0.7% of negative)
+  positive -> negative: 57 samples (4.3% of positive)
+
+  Most challenging class: 'positive' (57 errors)
+
+--- Sample Misclassified Texts ---
+
+  Errors for 'negative':
+    - "5 обіцянок які ви повинні собі дати"
+      True: negative | Predicted: neutral
+    - "Несе Віка воду прямо з під каштану а від неї запашок шо аж всім погано😂😂"
+      True: negative | Predicted: positive
+    - "Так незручно коли ти просто сидиш на сходах для вдалого кадру,у метро,це все зні..."
+      True: negative | Predicted: positive
+
+  Errors for 'positive':
+    - "Ізюм. Площа Леннона. Добре! Погано що не вийшло ще в Харкові. Але я уявляю що бу..."
+      True: positive | Predicted: negative
+    - "Петро Порошенко вам подобається таке ставлення до діабетиків? __ Петро Порошенко..."
+      True: positive | Predicted: negative
+    - "@yadrobotun Мабуть чоловіче і жіноче відділення в СІЗО не сполучаються. Але це я..."
+      True: positive | Predicted: negative
+
+
+======================================================================
+CROSS-MODEL ERROR SUMMARY
+======================================================================
+
+Neutral class error rates (most challenging category):
+  1_vader_generic: 0/100 errors (0.0%)
+  2a_custom_ua_rulebased: 0/100 errors (0.0%)
+  2b_custom_ua_hybrid: 0/100 errors (0.0%)
+  3_tfidf_logreg: 0/100 errors (0.0%)
+  4_xlm-roberta-base: 0/100 errors (0.0%)
+  5_bert-base-multilingual-cased: 0/100 errors (0.0%)
+
+======================================================================
+Key findings aligned with Section 4.5:
+- Rule-based: systematic errors due to static lexicons
+- Classical ML: errors in long-range dependencies
+- Transformers: more balanced, but struggle with neutral/ambiguous
+======================================================================

@@ -1,0 +1,31 @@
+text,label,label_id,pred_id,pred_label
+Продавець ігнорує повідомлення.,negative,0,1,neutral
+Все працює бездоганно.,positive,2,1,neutral
+"Товар як на фото, без сюрпризів.",neutral,1,1,neutral
+"Все стандартно, без нарікань.",neutral,1,1,neutral
+Товар розвалився за день.,negative,0,1,neutral
+Отримав посилку вчасно.,neutral,1,1,neutral
+Товар зовсім не той що на фото.,negative,0,1,neutral
+"Якість огидна, не варто грошей.",negative,0,1,neutral
+Продавець відповів на всі питання.,positive,2,1,neutral
+Нормальна покупка.,neutral,1,1,neutral
+"Люблю цей бренд, ніколи не підводить.",positive,2,2,positive
+"Швидка обробка замовлення, дякую!",positive,2,1,neutral
+"Все працює ідеально, дякую!",positive,2,1,neutral
+Нормальна якість за таку ціну.,neutral,1,1,neutral
+"Товар не відповідає опису, шахраї.",negative,0,1,neutral
+Не задоволений зовсім.,negative,0,0,negative
+"Огидний сервіс, ніякої підтримки.",negative,0,1,neutral
+"Просто звичайна річ, працює.",neutral,1,1,neutral
+Стандартна покупка без проблем.,neutral,1,1,neutral
+"Все супер, буду замовляти знову.",positive,2,2,positive
+"Поганий товар, зламався за тиждень.",negative,0,0,negative
+Товар відповідає всім очікуванням.,positive,2,1,neutral
+"Упаковка стандартна, товар цілий.",neutral,1,1,neutral
+"Товар якісний, упаковка акуратна.",positive,2,1,neutral
+"Відмінний вибір, не пошкодував.",positive,2,1,neutral
+Нормальна річ для щоденного використання.,neutral,1,1,neutral
+"Стандартний товар, нічого нового.",neutral,1,1,neutral
+Дуже неприємний досвід покупки.,negative,0,1,neutral
+Відмінний товар за розумну ціну.,positive,2,1,neutral
+Продукт зламався одразу після покупки.,negative,0,1,neutral
